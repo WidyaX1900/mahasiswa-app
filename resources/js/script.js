@@ -52,4 +52,26 @@ $(function() {
             },
         });
     });
+
+    $("#studentTable").on("click", ".view-btn", function() {
+        $("#name-show").html("");
+        $("#email-show").html("");
+        const id = $(this).data("id");
+        
+        $.ajax({
+            url: `/student/show/${id}`,
+            method: "get",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);                
+                $("#name-show").html(response.student.name);                                
+                $("#email-show").html(response.student.email);
+                $("#studentViewModal").modal("show");                                
+            },
+
+            error: function() {
+                alert("Student not found!");                
+            }
+        });       
+    });
 });
