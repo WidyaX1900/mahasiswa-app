@@ -53,6 +53,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'assets_url' => env('ASSETS_URL', 'http://localhost/mahasiswa-app/resources/'),
 
     /*
     |--------------------------------------------------------------------------
