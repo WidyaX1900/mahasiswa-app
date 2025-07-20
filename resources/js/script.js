@@ -27,6 +27,7 @@ $(function() {
             contentType: false,
             success: function(response) {                
                 if(response.status === "success") {
+                    $("#studentTable").load(location.href + " #studentTable > *");
                     $("#name").val("");
                     $("#email").val("");
                     $("#major").val("");
