@@ -9,4 +9,11 @@ class Student extends Model
 {
     /** @use HasFactory<\Database\Factories\StudentFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'major_id',
+        'class_id'
+    ];
 }

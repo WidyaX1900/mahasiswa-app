@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
@@ -17,19 +19,36 @@ class StudentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStudentRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email|unique:students,email',
+            'major' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'validation_errors' => $validator->errors()
+            ]);
+        }
+
+        $student = Student::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'major_id' => $request->major,
+            'class_id' => 1
+        ]);
+
+        if($student) {
+            return response()->json([
+                'status' => 'success',
+                'data' => $student
+            ]); 
+        }
     }
 
     /**
