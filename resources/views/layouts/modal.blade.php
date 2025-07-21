@@ -24,9 +24,11 @@
                         <label for="email" class="form-label">Major</label>
                         <select class="form-select" name="major_id" id="major_id">
                             <option selected value="">SELECT YOUR MAJOR</option>
-                            <option value="1">Computer Science</option>
-                            <option value="2">Accounting</option>
-                            <option value="3">Psychology</option>
+                            @foreach ($majors as $major)
+                                <option value="{{ $major->id }}">
+                                    {{ $major->name }}
+                                </option>    
+                            @endforeach
                         </select>
                         <div id="major_id-error" style="font-size: 14px" class="text-danger ajax-error"></div>
                     </div>
@@ -96,9 +98,11 @@
                         <label for="email" class="form-label">Major</label>
                         <select class="form-select" name="major_id" id="edit-major_id">
                             <option selected value="">SELECT YOUR MAJOR</option>
-                            <option value="1">Computer Science</option>
-                            <option value="2">Accounting</option>
-                            <option value="3">Psychology</option>
+                            @foreach ($majors as $major)
+                                <option value="{{ $major->id }}">
+                                    {{ $major->name }}
+                                </option>    
+                            @endforeach
                         </select>
                         <div id="edit-major_id-error" style="font-size: 14px" class="text-danger edit-ajax-error"></div>
                     </div>

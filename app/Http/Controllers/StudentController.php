@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use App\Models\Major;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -17,7 +18,11 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::orderBy('id', 'desc')->get();
-        return view('student.index', ['students' => $students]);
+        $majors = Major::all();
+        return view('student.index', [
+            'students' => $students,
+            'majors' => $majors
+        ]);
     }
 
     /**
