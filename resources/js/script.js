@@ -67,6 +67,7 @@ $(function() {
             success: function (response) {                
                 $("#name-show").html(response.student.name);                                
                 $("#email-show").html(response.student.email);
+                $("#major-show").html(response.student.major.name);
                 $("#studentViewModal").modal("show");                                
             },
 

@@ -17,7 +17,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::orderBy('id', 'desc')->get();
+        $students = Student::with('major') 
+            ->orderBy('id', 'desc')
+            ->get();
+
         $majors = Major::all();
         return view('student.index', [
             'students' => $students,
@@ -64,10 +67,12 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Student $student)
+    public function show($id)
     {
+        $student = new Student();
+        
         return response()->json([
-            'student' => $student
+            'student' => $student->with('major')->find($id)
         ]);
     }
 

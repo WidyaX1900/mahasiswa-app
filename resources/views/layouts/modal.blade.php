@@ -61,6 +61,10 @@
                         <span role="email-label" class="me-2">Email:</span>
                         <span id="email-show" role="email-content"></span>
                     </div>
+                    <div class="d-flex mb-1">
+                        <span role="major-label" class="me-2">Major:</span>
+                        <span id="major-show" role="major-content"></span>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

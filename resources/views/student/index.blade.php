@@ -11,6 +11,7 @@
             <thead>
                 <th>#</th>
                 <th>Name</th>
+                <th>Major</th>
                 <th>Action</th>
             </thead>
             <tbody>
@@ -18,6 +19,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $student->name }}</td>
+                        <td>{{ $student->major->name }}</td>
                         <td>
                             <button type="button" class="btn btn-sm btn-info me-2 view-btn" data-id="{{ $student->id }}">
                                 <i class="fa-solid fa-eye"></i>
