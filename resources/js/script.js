@@ -61,8 +61,7 @@ $(function() {
             url: `/student/show/${id}`,
             method: "get",
             dataType: "json",
-            success: function (response) {
-                console.log(response);                
+            success: function (response) {                
                 $("#name-show").html(response.student.name);                                
                 $("#email-show").html(response.student.email);
                 $("#studentViewModal").modal("show");                                
