@@ -7,6 +7,7 @@ use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class StudentController extends Controller
 {
@@ -72,9 +73,39 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStudentRequest $request, Student $student)
+    public function update(Request $request, Student $student)
     {
-        //
+        $student->fill($request->except(['_method', '_token']));
+        
+        // Jika tidak ada perubahan
+        if(!$student->isDirty()) {
+            return response()->json([
+                'status' => 'error',
+                'alert_html' => '<i class="fa-solid fa-circle-xmark me-1"></i> You don\'t change anything'
+            ]);
+        }
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => [
+                'required',
+                Rule::unique('students', 'email')->ignore($student->id)
+            ], 
+            'major_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'validation_errors' => $validator->errors()
+            ]);
+        } else {
+            $student->save();
+            return response()->json([
+                'status' => 'success',
+                'alert_html' => '<i class="fa-solid fa-circle-info me-1"></i> Student change saved'
+            ]);
+        }
     }
 
     /**

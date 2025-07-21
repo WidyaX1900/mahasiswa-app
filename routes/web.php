@@ -7,3 +7,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [StudentController::class, 'index']);
 Route::post('/student/store', [StudentController::class, 'store']);
 Route::get('/student/show/{student}', [StudentController::class, 'show']);
+Route::put('/student/update/{student}', [StudentController::class, 'update']);

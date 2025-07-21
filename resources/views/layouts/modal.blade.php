@@ -67,3 +67,49 @@
         </div>
     </div>
 </div>
+
+{{-- Modal edit data student --}}
+<div class="modal fade" id="editStudentFormModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="editStudentForm">
+                @csrf
+                @method('PUT')
+                <input type="hidden" name="id" id="edit-id">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Edit Student</h1>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="edit-name" placeholder="Full Name..."
+                            name="name">
+                        <div id="edit-name-error" style="font-size: 14px" class="text-danger edit-ajax-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="edit-email"
+                            placeholder="youremail@example.com" name="email">
+                        <div id="edit-email-error" style="font-size: 14px" class="text-danger edit-ajax-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Major</label>
+                        <select class="form-select" name="major_id" id="edit-major">
+                            <option selected value="">SELECT YOUR MAJOR</option>
+                            <option value="1">Computer Science</option>
+                            <option value="2">Accounting</option>
+                            <option value="3">Psychology</option>
+                        </select>
+                        <div id="edit-major_id-error" style="font-size: 14px" class="text-danger edit-ajax-error"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="saveStudentBtn" type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-floppy-disk me-1"></i> Save student
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
