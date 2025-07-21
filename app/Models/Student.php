@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Student extends Model
 {
@@ -15,4 +16,14 @@ class Student extends Model
         'email',
         'major_id'
     ];
+
+    /**
+     * Get the major that owns the Student
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function major(): BelongsTo
+    {
+        return $this->belongsTo(Major::class);
+    }
 }
