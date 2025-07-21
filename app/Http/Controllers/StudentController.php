@@ -40,8 +40,7 @@ class StudentController extends Controller
         $student = Student::create([
             'name' => $request->name,
             'email' => $request->email,
-            'major_id' => $request->major,
-            'class_id' => 1
+            'major_id' => $request->major
         ]);
 
         if($student) {
