@@ -1,12 +1,11 @@
 $(function() {
     $("#addStudentBtn").on("click", function() {
         $("#modalTitle").html("Add Student");
-        $("#saveStudentBtn").attr("data-type", "add");
-        $("#studentFormModal").modal("show");
+        $("#addStudentFormModal").modal("show");
     });
     
     let timeout;
-    $("#studentForm").submit(function(event) {
+    $("#addStudentForm").submit(function(event) {
         event.preventDefault();
 
         $('.ajax-error').each(function() {
@@ -31,7 +30,7 @@ $(function() {
                     $("#name").val("");
                     $("#email").val("");
                     $("#major").val("");
-                    $("#studentFormModal").modal("hide");
+                    $("#addStudentFormModal").modal("hide");
                 
                 }
                 

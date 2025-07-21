@@ -1,11 +1,11 @@
 {{-- Modal add data student --}}
-<div class="modal fade" id="studentFormModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+<div class="modal fade" id="addStudentFormModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form id="studentForm">
+            <form id="addStudentForm">
                 @csrf
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalTitle">Add Student</h1>
+                    <h1 class="modal-title fs-5">Add Student</h1>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id="saveStudentBtn" type="submit" class="btn btn-primary" data-type="add">
+                    <button id="saveStudentBtn" type="submit" class="btn btn-primary">
                         <i class="fa-solid fa-floppy-disk me-1"></i> Save student
                     </button>
                 </div>
