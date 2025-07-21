@@ -27,8 +27,12 @@ class StudentController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required|email|unique:students,email',
-            'major' => 'required'
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('students', 'email')
+            ],
+            'major_id' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -41,7 +45,7 @@ class StudentController extends Controller
         $student = Student::create([
             'name' => $request->name,
             'email' => $request->email,
-            'major_id' => $request->major
+            'major_id' => $request->major_id
         ]);
 
         if($student) {

@@ -22,13 +22,13 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Major</label>
-                        <select class="form-select" name="major" id="major">
+                        <select class="form-select" name="major_id" id="major_id">
                             <option selected value="">SELECT YOUR MAJOR</option>
                             <option value="1">Computer Science</option>
                             <option value="2">Accounting</option>
                             <option value="3">Psychology</option>
                         </select>
-                        <div id="major-error" style="font-size: 14px" class="text-danger ajax-error"></div>
+                        <div id="major_id-error" style="font-size: 14px" class="text-danger ajax-error"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Major</label>
-                        <select class="form-select" name="major_id" id="edit-major">
+                        <select class="form-select" name="major_id" id="edit-major_id">
                             <option selected value="">SELECT YOUR MAJOR</option>
                             <option value="1">Computer Science</option>
                             <option value="2">Accounting</option>

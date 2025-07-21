@@ -31,7 +31,7 @@ $(function() {
                     $("#studentTable").load(location.href + " #studentTable > *");
                     $("#name").val("");
                     $("#email").val("");
-                    $("#major").val("");
+                    $("#major_id").val("");
                     $("#addStudentFormModal").modal("hide");
                 
                 }
@@ -94,7 +94,7 @@ $(function() {
                 $("#edit-id").val(response.student.id);
                 $("#edit-name").val(response.student.name);
                 $("#edit-email").val(response.student.email);
-                $("#edit-major").val(response.student.major_id);
+                $("#edit-major_id").val(response.student.major_id);
                 $("#editStudentFormModal").modal("show");
             },
 
@@ -130,7 +130,7 @@ $(function() {
                     $("#studentTable").load(location.href + " #studentTable > *");
                     $("#edit-name").val("");
                     $("#edit-email").val("");
-                    $("#edit-major").val("");
+                    $("#edit-major_id").val("");
                     $("#editStudentFormModal").modal("hide");
 
                 }
