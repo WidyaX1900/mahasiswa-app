@@ -22,7 +22,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Major</label>
-                        <select class="form-select" name="major">
+                        <select class="form-select" name="major" id="major">
                             <option selected value="">SELECT YOUR MAJOR</option>
                             <option value="1">Computer Science</option>
                             <option value="2">Accounting</option>
