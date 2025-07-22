@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5386dd51ad0f71ed9501d253cc60f829",
+    "content-hash": "3fcf7643ecbc92e02aeb4ba832e024f7",
     "packages": [
         {
             "name": "brick/math",
@@ -3270,6 +3270,35 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.0"
             },
             "time": "2025-06-25T14:20:11+00:00"
+        },
+        {
+            "name": "rangga/laravel-command",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "D:/mypackages/laravel-test-command",
+                "reference": "6438af6cc92a98db6d50799fe0420a39fe290854"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rangga\\LaravelCommand\\TestServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rangga\\LaravelCommand\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel command CLI",
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "rangga/laravel-test",
@@ -8333,6 +8362,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "rangga/laravel-command": 20,
         "rangga/laravel-test": 20
     },
     "prefer-stable": true,
