@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5fbbe6137dc77bcd5b6646b5dd75b52",
+    "content-hash": "5386dd51ad0f71ed9501d253cc60f829",
     "packages": [
         {
             "name": "brick/math",
@@ -3270,6 +3270,33 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.0"
             },
             "time": "2025-06-25T14:20:11+00:00"
+        },
+        {
+            "name": "rangga/laravel-test",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "D:/mypackages/laravel-test",
+                "reference": "9f357c0c6d0e673aa6b8020f1377882d2a97822e"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rangga\\LaravelTest\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "RanggaWidya19"
+                }
+            ],
+            "description": "Buat file test.txt",
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "symfony/clock",
@@ -8305,7 +8332,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "rangga/laravel-test": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
