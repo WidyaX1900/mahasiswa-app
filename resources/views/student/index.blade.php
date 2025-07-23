@@ -24,11 +24,10 @@
                             <button type="button" class="btn btn-sm btn-info me-2 view-btn" data-id="{{ $student->id }}">
                                 <i class="fa-solid fa-eye"></i>
                             </button>
-                            <button type="button" class="btn btn-sm btn-warning me-2 edit-btn"
-                                data-id="{{ $student->id }}">
+                            <button type="button" class="btn btn-sm btn-warning me-2 edit-btn" data-id="{{ $student->id }}">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
-                            <button type="button" class="btn btn-sm btn-danger">
+                            <button type="button" class="btn btn-sm btn-danger delete-btn" data-id="{{ $student->id }}" data-name="{{ $student->name }}">
                                 <i class="fa-solid fa-trash-can"></i>
                             </button>
                         </td>

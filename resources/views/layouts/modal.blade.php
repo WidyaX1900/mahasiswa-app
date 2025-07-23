@@ -121,3 +121,28 @@
         </div>
     </div>
 </div>
+
+{{-- Modal delete data student --}}
+<div class="modal fade" id="deleteStudentFormModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="deleteStudentForm">
+                @csrf
+                @method('DELETE')
+                <input type="hidden" name="id" id="delete-id">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5">Delete Student</h1>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">Are you sure permanently delete <strong id="deleteStudentName"></strong>?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="deleteStudentBtn" type="submit" class="btn btn-danger">
+                        <i class="fa-solid fa-trash-can me-1"></i> Yes, delete
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

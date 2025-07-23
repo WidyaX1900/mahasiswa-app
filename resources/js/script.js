@@ -163,4 +163,56 @@ $(function() {
             },
         });
     });
+
+    $("#studentTable").on("click", ".delete-btn", function () {
+        $("#alertInfo").html("");
+        $("#deleteStudentName").html("");
+        
+        const id = $(this).data("id");
+        const name = $(this).data("name");
+        $("#delete-id").val(id);
+        $("#deleteStudentName").html(name);
+        $("#deleteStudentFormModal").modal("show");
+
+    });
+
+    $("#deleteStudentForm").submit(function (event) {
+        event.preventDefault();
+        $("#alertInfo").html("");
+
+        const formObj = $(this)[0];
+        const formData = new FormData(formObj);
+        $("#deleteStudentBtn").prop("disabled", true);
+
+        $.ajax({
+            url: `/student/delete`,
+            method: "post",
+            data: formData,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.status === "success") {
+                    $("#studentTable").load(location.href + " #studentTable > *");
+                    $("#delete-id").val("");
+                    $("#deleteStudentFormModal").modal("hide");
+                }
+
+                if (response.alert_html) {
+                    $("#deleteStudentFormModal").modal("hide");
+                    const color = response.status === "error" ? "alert-danger" : "alert-success";
+
+                    $("#alertInfo").html(`<div class="alert ${color} alert-dismissible fade show text-center" role="alert">
+                        ${response.alert_html}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>`);
+                }
+
+            },
+
+            complete: function() {
+                $("#deleteStudentBtn").prop("disabled", false);
+            }
+        });
+    });
 });

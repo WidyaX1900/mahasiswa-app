@@ -126,8 +126,32 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'alert_html' => '<i class="fa-solid fa-circle-xmark me-1"></i> ' . $error
+            ]);
+        }
+
+        $student = Student::find($request->id);
+        $delete = $student->delete();
+
+        if(!$delete) {
+            return response()->json([
+                'status' => 'error',
+                'alert_html' => '<i class="fa-solid fa-circle-xmark me-1"></i> Delete data failed. Please try again!'
+            ]);
+        }
+        
+        return response()->json([
+            'status' => 'success',
+            'alert_html' => '<i class="fa-solid fa-circle-info me-1"></i> Student delete successfully.'
+        ]);
     }
 }
