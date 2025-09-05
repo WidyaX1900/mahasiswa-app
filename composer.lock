@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fcf7643ecbc92e02aeb4ba832e024f7",
+    "content-hash": "198bb33190d8ff792c2cc1479f41c1ba",
     "packages": [
         {
             "name": "brick/math",
@@ -3270,62 +3270,6 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.0"
             },
             "time": "2025-06-25T14:20:11+00:00"
-        },
-        {
-            "name": "rangga/laravel-command",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "D:/mypackages/laravel-test-command",
-                "reference": "6438af6cc92a98db6d50799fe0420a39fe290854"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Rangga\\LaravelCommand\\TestServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rangga\\LaravelCommand\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Laravel command CLI",
-            "transport-options": {
-                "relative": false
-            }
-        },
-        {
-            "name": "rangga/laravel-test",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "D:/mypackages/laravel-test",
-                "reference": "9f357c0c6d0e673aa6b8020f1377882d2a97822e"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Rangga\\LaravelTest\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "RanggaWidya19"
-                }
-            ],
-            "description": "Buat file test.txt",
-            "transport-options": {
-                "relative": false
-            }
         },
         {
             "name": "symfony/clock",
@@ -8361,10 +8305,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "rangga/laravel-command": 20,
-        "rangga/laravel-test": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
