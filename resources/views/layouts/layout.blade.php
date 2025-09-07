@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mahasiswa App</title>
-    <link rel="stylesheet" href="{{ config('app.assets_url') }}bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="{{ config('app.assets_url') }}js/jquery-3.7.1.js"></script>
-    @vite(['resources/js/script.js'])
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    @vite(['resources/js/script.js', 'resources/bootstrap/css/bootstrap.min.css'])
 </head>
 <body>
     @yield('navbar')
